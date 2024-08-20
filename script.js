@@ -13,15 +13,15 @@ window.addEventListener("load", function () {
     .then(function () {
       console.log(listedPlanets);
       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-      let randomPlanet = pickPlanet(listedPlanets);
+
       addDestinationInfo(
         document,
-        randomPlanet.name,
-        randomPlanet.diameter,
-        randomPlanet.star,
-        randomPlanet.distance,
-        randomPlanet.moons,
-        randomPlanet.image
+        pickPlanet(listedPlanets).name,
+        pickPlanet(listedPlanets).diameter,
+        pickPlanet(listedPlanets).star,
+        pickPlanet(listedPlanets).distance,
+        pickPlanet(listedPlanets).moons,
+        pickPlanet(listedPlanets).image
       );
     });
 
