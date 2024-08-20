@@ -24,6 +24,7 @@ window.addEventListener("load", function () {
         randomPlanet.image
       );
     });
+
   let list = document.getElementById("faultyItems");
   let form = document.querySelector("form");
 
