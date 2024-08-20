@@ -50,28 +50,28 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     validateInput(fuelLevel) === "Empty" ||
     validateInput(cargoLevel) === "Empty"
   ) {
-    faulty.style.visibility = "hidden";
+    window.alert("All fields are required before submiting.");
     launchStatus.innerHTML = "Awaiting Information Before Launch";
     launchStatus.style.color = "black";
-    window.alert("All fields are required before submiting.");
+    faulty.style.visibility = "hidden";
   } else if (
     validateInput(pilot) === "Is a Number" ||
     validateInput(copilot) === "Is a Number"
   ) {
-    faulty.style.visibility = "hidden";
+    window.alert("Enter only letters for the Pilot and Co-Pilot fields.");
     launchStatus.innerHTML = "Awaiting Information Before Launch";
     launchStatus.style.color = "black";
-    window.alert("Enter only letters for the Pilot and Co-Pilot fields.");
+    faulty.style.visibility = "hidden";
   } else if (
     validateInput(fuelLevel) === "Not a Number" ||
     validateInput(cargoLevel) === "Not a Number"
   ) {
-    faulty.style.visibility = "hidden";
-    launchStatus.innerHTML = "Awaiting Information Before Launch";
-    launchStatus.style.color = "black";
     window.alert(
       "Enter only numbers for the Fuel Level and Cargo Mass fields."
     );
+    launchStatus.innerHTML = "Awaiting Information Before Launch";
+    launchStatus.style.color = "black";
+    faulty.style.visibility = "hidden";
   } else {
     if (fuelLevel < 10000 && cargoLevel > 10000) {
       faulty.style.visibility = "visible";
